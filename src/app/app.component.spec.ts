@@ -1,29 +1,43 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { CommonModule } from '@angular/common';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('AppComponent', () => {
+  let fixture: ComponentFixture<AppComponent>;
+  let component: AppComponent;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      imports: [
+        RouterTestingModule,
+        CommonModule,           
+        MatToolbarModule,        
+        RouterLink,
+        RouterLinkActive,
+        AppComponent
+      ],
     }).compileComponents();
+
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 
-  it(`should have the 'hacker-news' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('hacker-news');
+  it('should have the title "hacker-news"', () => {
+    expect(component.title).toEqual('hacker-news');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, hacker-news');
+  it('should have router links working', () => {
+    const compiled = fixture.nativeElement;
+    const newPostsButton = compiled.querySelector('button');
+    expect(newPostsButton).toBeTruthy();
+    expect(newPostsButton.getAttribute('routerLink')).toEqual('/new-posts');
   });
 });

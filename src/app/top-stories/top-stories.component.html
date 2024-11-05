@@ -1,11 +1,16 @@
-<div class="container">
-    <h1>Top Stories from Hacker News</h1>
+<div class="container" infiniteScroll
+[infiniteScrollDistance]="scrollDistance"
+[infiniteScrollUpDistance]="scrollUpDistance"
+[infiniteScrollThrottle]="throttle"
+(scrolled)="loadMoreStories()">
+    <!-- <h3>New Stories from Hacker News</h3> -->
     <div *ngFor="let story of stories">
       <div *ngIf="story" class="story-card">
-        <h2><a [href]="story.url" target="_blank">{{ story.title }}</a></h2>
+        <h3><a [href]="story.url" target="_blank">{{ story.title }}</a></h3>
         <p>by {{ story.by }} | {{ story.score }} points | {{ story.descendants }} comments</p>
         <p>Published: {{ (story.time * 1000) | date:'medium' }}</p>
       </div>
     </div>
+    <div *ngIf="loading">Loading stories...</div>
   </div>
   
