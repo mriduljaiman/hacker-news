@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { DemoAngularMaterailModule } from './DemoAngularMaterailModule';
+import { NewsService } from './services/news.service';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,7 @@ import { DemoAngularMaterailModule } from './DemoAngularMaterailModule';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent{
   title = 'hacker-news';
+
 }

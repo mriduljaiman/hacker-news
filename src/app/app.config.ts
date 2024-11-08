@@ -6,6 +6,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideHttpClient } from '@angular/common/http';
 import { TopStoriesComponent } from './top-stories/top-stories.component';
 import { bootstrapApplication } from '@angular/platform-browser';
+import { NgxSpinner, NgxSpinnerModule } from 'ngx-spinner';
 
 export const appConfig: ApplicationConfig = {
   providers: [

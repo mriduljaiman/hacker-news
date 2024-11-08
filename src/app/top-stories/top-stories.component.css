@@ -1,32 +1,12 @@
-/* .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .story-card {
-    border: 1px solid #ccc;
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 8px;
-    background: #f9f9f9;
-  }
-  
-  .story-card h2 {
-    font-size: 1.1em;
-  }
-  
-  .story-card p {
-    color: #555;
-    margin: 5px 0;
-  }
-   */
-
    .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
   }
+  ngx-spinner {
+    z-index: 9999;
+  }
+  
   
   /* For desktop screens */
   @media (min-width: 1200px) and (max-width: 1920px) {

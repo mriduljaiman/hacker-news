@@ -1,3 +1,4 @@
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner> 
 <div class="container" infiniteScroll
 [infiniteScrollDistance]="scrollDistance"
 [infiniteScrollUpDistance]="scrollUpDistance"
@@ -11,6 +12,7 @@
         <p>Published: {{ (story.time * 1000) | date:'medium' }}</p>
       </div>
     </div>
-    <div *ngIf="loading">Loading stories...</div>
+
+    <!-- <div *ngIf="loading">Loading stories...</div> -->
   </div>
   
