@@ -3,6 +3,7 @@ import { NewsService } from '../services/news.service';
 import { CommonModule } from '@angular/common';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
+import { Story } from '../model/Story';
 
 @Component({
   selector: 'app-top-stories',
@@ -12,9 +13,8 @@ import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
   styleUrl: './top-stories.component.css'
 })
 export class TopStoriesComponent implements OnInit{
-[x: string]: any;
 
-  stories: any[] = [];
+  stories: Story[] = [];
   loading: boolean = false;
   startIndex: number = 0;
   batchSize: number = 10;

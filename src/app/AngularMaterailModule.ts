@@ -46,6 +46,6 @@ import { MatSortModule } from '@angular/material/sort';
     MatSortModule
   ]
 })
-export class DemoAngularMaterailModule {
+export class AngularMaterailModule {
 
 }

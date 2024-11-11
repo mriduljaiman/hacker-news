@@ -4,7 +4,6 @@
 [infiniteScrollUpDistance]="scrollUpDistance"
 [infiniteScrollThrottle]="throttle"
 (scrolled)="loadMoreStories()">
-    <!-- <h3>New Stories from Hacker News</h3> -->
     <div *ngFor="let story of stories">
       <div *ngIf="story" class="story-card">
         <h3><a [href]="story.url" target="_blank">{{ story.title }}</a></h3>
@@ -12,7 +11,5 @@
         <p>Published: {{ (story.time * 1000) | date:'medium' }}</p>
       </div>
     </div>
-
-    <!-- <div *ngIf="loading">Loading stories...</div> -->
   </div>
   
